@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+
+<html>
+  <head></head>
+  <body>
+    <script>
+      function computerPlay() {
+        let randomNumbers = Math.random();
+        console.log(randomNumbers);
+
+        if (randomNumbers <= 0.33) {
+          return "Rock";
+        } else if (randomNumbers >= 0.33 && randomNumbers <= 0.66) {
+          return "Paper"
+        } else {
+          return "Scissors"
+        } 
+      }
+
+      function playRound(playerSelection, computerSelection) {
+        let lowerCasePlayer = playerSelection.toLowerCase();
+        let lowerCaseComputer = computerSelection.toLowerCase();
+
+        if (lowerCasePlayer == "rock" && lowerCaseComputer == "paper") {
+
+          return "Paper beats rock. You Lose!";
+
+        } else if (lowerCasePlayer == "rock" && lowerCaseComputer ==
+          "scissors") {
+
+          return "Rock beats scissors. You Win!";
+
+        } else if (lowerCasePlayer == "paper" && lowerCaseComputer == "rock") {
+
+          return "Paper beats rock. You Win!";
+
+        } else if (lowerCasePlayer == "paper" && lowerCaseComputer ==
+          "scissors") {
+          
+          return "Scissors beats paper. You lose!";
+       
+        } else if (lowerCasePlayer == "scissors" && lowerCaseComputer == 
+          "rock") {
+       
+          return "Rock beats scissors. You lose!";
+          
+        } else if (lowerCasePlayer == "scissors" && lowerCaseComputer ==
+          "paper") {
+     
+          return "Scissors beats paper. You Win!"
+
+        } else if (lowerCasePlayer == lowerCaseComputer) {
+          
+          return "Tie!"
+   
+        }
+    
+      }
+
+      const playerSelection = "rock";
+      const computerSelection = computerPlay();
+      console.log(playRound(playerSelection, computerSelection));
+
+    </script> 
+  </body>
+</html>
