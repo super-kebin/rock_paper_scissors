@@ -57,10 +57,53 @@
     
       }
 
-      const playerSelection = "rock";
-      const computerSelection = computerPlay();
-      console.log(playRound(playerSelection, computerSelection));
+      //const playerSelection = "rock";
+      //const computerSelection = computerPlay();
+      //console.log(playRound(playerSelection, computerSelection));
 
+      function game() {
+        let playerScore = 0;
+        let computerScore = 0;
+        
+        for (rounds = 1; rounds < 6; rounds++) {
+          let playerChoice = prompt("Rock, Paper, Scissors? " + "Round: " + rounds);
+          // Write a statement that tells the player that input doesn't compute
+          // and has to redo the round
+          let computerChoice = computerPlay();
+          let gameResults = playRound(playerChoice, computerChoice);
+          // alert(gameResults);
+          console.log(gameResults);
+
+          let lowerCaseResults = gameResults.toLowerCase();
+          let arrayOfWinner = lowerCaseResults.split(" ");
+          let resultsOfWinner = arrayOfWinner[4];
+          // console.log(resultsOfWinner);
+          if (resultsOfWinner == "win!") {
+            playerScore++;
+          } else if (resultsOfWinner == "lose!") {
+            computerScore++;
+          }
+
+          // alert("You: " + playerScore + " " + "Computer: " + computerScore);
+          console.log("You: " + playerScore + " " + "Computer: " + computerScore);
+          console.log(rounds);
+        
+
+          if (playerScore == 3) {
+            return "You win the game!";
+          } else if (computerScore == 3) {
+            return "You lose the game!";
+          } else if (rounds == 5 && playerScore == computerScore) {
+            return "Tie game!";
+          } else if (playerScore > computerScore && rounds == 5) {
+            return "You win the game!"
+          } else if (computerScore > playerScore && rounds == 5) {
+            return "You lose the game!"
+          }
+        }
+      }
+
+      alert(game());
     </script> 
   </body>
 </html>
