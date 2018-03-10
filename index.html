@@ -18,43 +18,27 @@
       }
 
       function playRound(playerSelection, computerSelection) {
-        let lowerCasePlayer = playerSelection.toLowerCase();
         let lowerCaseComputer = computerSelection.toLowerCase();
 
-        if (lowerCasePlayer == "rock" && lowerCaseComputer == "paper") {
-
+        if (playerSelection == "rock" && lowerCaseComputer == "paper") {
           return "Paper beats rock. You Lose!";
-
-        } else if (lowerCasePlayer == "rock" && lowerCaseComputer ==
+        } else if (playerSelection == "rock" && lowerCaseComputer ==
           "scissors") {
-
           return "Rock beats scissors. You Win!";
-
-        } else if (lowerCasePlayer == "paper" && lowerCaseComputer == "rock") {
-
+        } else if (playerSelection == "paper" && lowerCaseComputer == "rock") {
           return "Paper beats rock. You Win!";
-
-        } else if (lowerCasePlayer == "paper" && lowerCaseComputer ==
+        } else if (playerSelection == "paper" && lowerCaseComputer ==
           "scissors") {
-          
           return "Scissors beats paper. You lose!";
-       
-        } else if (lowerCasePlayer == "scissors" && lowerCaseComputer == 
+        } else if (playerSelection == "scissors" && lowerCaseComputer == 
           "rock") {
-       
           return "Rock beats scissors. You lose!";
-          
-        } else if (lowerCasePlayer == "scissors" && lowerCaseComputer ==
+        } else if (playerSelection == "scissors" && lowerCaseComputer ==
           "paper") {
-     
           return "Scissors beats paper. You Win!"
-
-        } else if (lowerCasePlayer == lowerCaseComputer) {
-          
+        } else if (playerSelection == lowerCaseComputer) {
           return "Tie!"
-   
         }
-    
       }
 
       //const playerSelection = "rock";
@@ -67,8 +51,6 @@
         
         for (rounds = 1; rounds < 6; rounds++) {
           let playerChoice = prompt("Rock, Paper, Scissors? " + "Round: " + rounds);
-          // Write a statement that tells the player that input doesn't compute
-          // and has to redo the round
           let computerChoice = computerPlay();
           let gameResults = playRound(playerChoice, computerChoice);
           // alert(gameResults);
