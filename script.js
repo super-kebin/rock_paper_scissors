@@ -75,12 +75,14 @@ buttons.forEach((button) => {
     if (playerScore == 5) {
       let winnerOfGame = document.createElement('p');
       winnerOfGame.textContent = "You win the game!"
+      winnerOfGame.style.fontWeight = "bold";
       results.appendChild(winnerOfGame);
       playerScore = 0;
       computerScore = 0;
     } else if (computerScore == 5) {
       let winnerOfGame = document.createElement('p');
       winnerOfGame.textContent = "You lose the game!"
+      winnerOfGame.style.fontWeight = "bold";
       results.appendChild(winnerOfGame);
       playerScore = 0;
       computerScore = 0;
